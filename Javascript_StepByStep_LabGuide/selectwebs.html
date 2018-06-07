@@ -1,0 +1,18 @@
+<html><head>
+<script language="JavaScript">
+function disp()
+{
+	ind = document.f1.webs.selectedIndex;
+	//Comments : index of the selected Item
+    window.open(document.f1.webs.options[ind].text , "_blank")
+}
+</script>
+</head><body>
+<form name="f1">
+<select name="webs" onchange="disp()">
+	<option  value="1"> http://sparsh
+	<option  value="2"> http://kshop
+	<option value="3"> http://172.21.20.155/
+	<option value="4">http://newmywipro.wipro.com/
+</select>
+</form></body></html>

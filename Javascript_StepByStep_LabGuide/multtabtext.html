@@ -1,0 +1,16 @@
+<html><head>
+<script language="JavaScript">
+	/* Comments : To Display numbers from 1 to 10 using for loop in a Table format*/
+	mulNo = Number(prompt("enter number to display multiplication table"));
+	document.write("<form>");
+	document.write("<table border='1' width='30%'>");
+	document.write("<th>X</th><th>Y</th><th>X*Y</th>");
+		for(i=1;i<=10;i++)
+		{
+			document.write("<tr><td>"+ i +"</td><td>"+mulNo+" </td>"+"<td width = '45%'><input type = 'text' value = "+i*mulNo+"></td></tr>");
+		}
+	document.write("</table>");
+	document.write("</form>");
+</script>
+</head><body>
+</body></html>

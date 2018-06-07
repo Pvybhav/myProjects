@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Scenario-3</title>
+</head>
+<body>
+	<ul id="ul">
+		<li>324255</li>
+		<li>323647</li>
+		<li>323664</li>
+		<li>323093</li>
+		<li>323106</li>
+		<li>323313</li>
+		<li>322222342345</li>
+		<li>3234543242</li>
+		<li>23233232</li>
+		<li>323625</li>
+	</ul>
+	<script>
+
+		var unorderedlist = document.getElementById("ul");
+		var listItem = unorderedlist.getElementsByTagName("li");
+		var noArray = [];
+		
+		for (var i = 0; i < listItem.length; i++) {
+			noArray.push(parseInt(listItem[i].innerHTML));
+			var no = noArray[i].toString();
+			if (no.search("5") != -1) {				
+				document.getElementsByTagName("li")[i].setAttribute("id", no);
+				highlight(listItem[i].id, 'blue');
+			}
+		};
+		
+		function highlight(name, color) {
+			var a = document.getElementById(name);
+			a.style.background = color;//for background color
+			a.style.color = "yellow";//for foreground color
+			a.style.fontSize = "30px";//to increase font size
+		};
+		
+	</script>
+</body>
+</html>

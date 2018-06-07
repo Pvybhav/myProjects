@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Scenario-6</title>
+</head>
+<body>
+	<p id="para">This is Paragraph</p>
+	<script>
+		var bcolor = setInterval(backgroundfunction, 1000);
+
+		function backgroundfunction() {
+			var background = prompt(
+					"background color to change background color of your webpage",
+					" enter background color here");
+			var foreground = prompt(
+					"foreground color to change foreground color of your paragraph",
+					"enter foreground color here");
+			var bg = background.toLowerCase();
+			var fg = foreground.toLowerCase();
+			if (bg != "no" || fg != "no") {
+				document.body.style.background = background;
+				document.getElementById("para").style.color = foreground;
+
+			} else {
+				clearInterval(bcolor);
+			}
+		}
+	</script>
+</body>
+</html>

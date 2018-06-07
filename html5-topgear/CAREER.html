@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Career</title>
+<style>
+img {
+	width: 100%;
+	height: 100%;
+}
+</style>
+</head>
+<body>
+	<h1>Career</h1>
+	<p id="date"></p>
+	<img alt="career image" src="career.jpg">
+	<script>
+		(function myFunction() {
+			setInterval(function() {
+				document.getElementById("date").innerHTML = Date();
+			}, 1000);
+		})();
+	</script>
+</body>
+</html>

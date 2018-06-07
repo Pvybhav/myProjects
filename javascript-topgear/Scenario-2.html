@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Scenario-2</title>
+<style>
+#id {
+	text-align: center;
+}
+</style>
+</head>
+<body>
+	<div id="id">
+		<p id="avgmarks"></p>
+	</div>
+	<script>
+		var total = 0, avg = 0;
+		var marksArray = [ 10, 20, 30, 40, 50, 60, 70, 200 ];
+		for (var i = 0; i < marksArray.length; i++) {
+			total = total + marksArray[i];
+		}
+		avg = total / marksArray.length;
+		document.getElementById("avgmarks").innerHTML = "<h1>"
+				+ "average marks in the given marks array is " + "</h1>" + avg;
+	</script>
+</body>
+</html>

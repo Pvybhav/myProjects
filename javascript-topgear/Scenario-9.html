@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Scenario-9</title>
+</head>
+<body>
+	<input type="button" onclick="displayAllDetails()"
+		value="click here to get the details of the CD">
+	<p id="result"></p>
+	<script>
+		function displayAllDetails() {
+			var CDObj = {
+				name : "Bahubali",
+				publisher : "National Institute of Prakrit Studies and Research",
+				price : 100,
+			};
+			var finalPrice = (CDObj.price) + (CDObj.price) * (1 / 10)
+					- (CDObj.price) * (3 / 100);
+			document.getElementById("result").innerHTML = "CD name is ..........."
+					+ CDObj.name
+					+ "<br>CD Publisher is ....."
+					+ CDObj.publisher
+					+ "<br>Price ....................."
+					+ CDObj.price + "<br>final price is ........." + finalPrice;
+		}
+	</script>
+</body>
+</html>

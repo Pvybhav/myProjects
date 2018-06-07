@@ -1,0 +1,178 @@
+<html>
+<head>
+<h1><center>Railway Reservation Form</center></h1>
+</head>
+<title>Railway Reservation Form</title>
+<body>
+	<form action="">
+		<table border="1" align="center">
+			<col width="467">
+			<col width="467">
+			<tr>
+				<th colspan="2">Railway Reservation Form</th>
+			</tr>
+			<tr>
+				<td>Train No:<input type="text"
+					placeholder="enter Train No & Name" size="44" onchange="trainNo()"
+					required autofocus="autofocus" pattern=".([1-9])+(?:-?\d)" required
+					title="Enter only Numbers" maxlength="5"></td>
+				<td>Date of journey:<input id="currentDate" type="date"
+					size="46" required min=''></td>
+			</tr>
+			<tr>
+				<td>Class:<select>
+						<option value="Sleeper">Sleeper</option>
+						<option value="Third A/C">Third A/C</option>
+						<option value="Second A/C">Second A/C</option>
+						<option value="First A/C">First A/C</option>
+						<option value="Second Sitting">Second Sitting</option>
+						<option value="Three A/C Economy">Three A/C Economy</option>
+				</select></td>
+				<td>No of Berths/Seats:<input type="text"
+					placeholder="enter No of Berth/Seat" size="45" required
+					pattern=".{1,2}" title="Enter berths only upto 6"></td>
+			</tr>
+			<tr>
+				<td>Station from :<input type="text"
+					placeholder="enter Source " size="48" required></td>
+				<td>To:<input type="text" placeholder="enter Destination"
+					size="58" required></td>
+			</tr>
+		</table>
+
+
+		<table border="1" align="center">
+
+			<tr>
+				<th>S.No.</th>
+				<th style="width: 50px">Name in Block letter(not more than 15
+					chars)</th>
+				<th>Sex(M/F)</th>
+				<th>Age</th>
+				<th>Concession<br>/TravelAuthority No.
+				</th>
+				<th>Choice if any</th>
+			</tr>
+			<tr>
+				<td align="center">1</td>
+				<td><input type="text" maxlength="15"></td>
+				<td><select>
+						<option value="male">select</option>
+						<option value="male">male</option>
+						<option value="female">female</option>
+						<option value="others">others</option>
+				</select></td>
+				<td><input type="text" pattern=".{1,100}"
+					title="Enter correct age"></td>
+				<td><input type="text"></td>
+				<td><input type="text"></td>
+			</tr>
+			<tr>
+				<td align="center">2</td>
+				<td colspan="1"><input type="text" maxlength="15"></td>
+				<td><select>
+						<option value="male">select</option>
+						<option value="male">male</option>
+						<option value="female">female</option>
+						<option value="others">others</option>
+				</select></td>
+				<td><input type="text" pattern=".{1,100}"
+					title="Enter correct age"></td>
+				<td><input type="text"></td>
+				<td><input type="text"></td>
+			</tr>
+			<tr>
+				<td align="center">3</td>
+				<td colspan="1"><input type="text" maxlength="15"></td>
+				<td><select>
+						<option value="male">select</option>
+						<option value="male">male</option>
+						<option value="female">female</option>
+						<option value="others">others</option>
+				</select></td>
+				<td><input type="text" pattern=".{1,100}"
+					title="Enter correct age"></td>
+				<td><input type="text"></td>
+				<td><input type="text"></td>
+			</tr>
+			<tr>
+				<td align="center">4</td>
+				<td colspan="1"><input type="text" maxlength="15"></td>
+				<td><select>
+						<option value="male">select</option>
+						<option value="male">male</option>
+						<option value="female">female</option>
+						<option value="others">others</option>
+				</select></td>
+				<td><input type="text" pattern=".{1,100}"
+					title="Enter correct age"></td>
+				<td><input type="text"></td>
+				<td><input type="text"></td>
+			</tr>
+			<tr>
+				<td align="center">5</td>
+				<td colspan="1"><input type="text" maxlength="15"></td>
+				<td><select>
+						<option value="male">select</option>
+						<option value="male">male</option>
+						<option value="female">female</option>
+						<option value="others">others</option>
+				</select></td>
+				<td><input type="text" pattern=".{1,100}"
+					title="Enter correct age"></td>
+				<td><input type="text"></td>
+				<td><input type="text"></td>
+			</tr>
+			<tr>
+				<td colspan="6"><h3 align="center">Signature of the
+						Applicant/Representative</h3></td>
+			</tr>
+			<tr>
+				<td colspan="2">Telephone No., if any</td>
+				<td><input type="text" maxlength="10"></td>
+				<td colspan="1">Date</td>
+				<td colspan="2"><p id="currentDate"></p></td>
+			</tr>
+			<tr>
+				<td colspan="6"><br>
+					<p align="center">
+						<button type="submit">Submit</button>
+					</p></td>
+			</tr>
+
+			<tr>
+				<td colspan="6">Note : <br>
+					<ol>
+						<li>Maximum permissible passengers is 6 per requisition.</li>
+						<li>One person can give one requisition form at a time.</li>
+						<li>Please check your ticket and balance amount before
+							leaving the window.</li>
+						<li>Forms not properly filled or in illegible forms shall not
+							be entertained.</li>
+						<li>Choice is subject to availability</li>
+					</ol>
+				</td>
+			</tr>
+		</table>
+	</form>
+	<script type="text/javascript">
+		var today = new Date();
+		var dd = today.getDate();
+		var mm = today.getMonth() + 1; //January is 0!
+		var yyyy = today.getFullYear();
+
+		if (dd < 10) {
+			dd = '0' + dd;
+		}
+		if (mm < 10) {
+			mm = '0' + mm;
+		}
+
+		//today = dd + '-' + mm + '-' + yyyy;
+		today = yyyy + '-' + mm + '-' + dd;
+
+		document.getElementById("currentDate").setAttribute("min", today);
+		//alert(today);
+	</script>
+</body>
+</html>

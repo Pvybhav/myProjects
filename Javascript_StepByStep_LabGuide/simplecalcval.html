@@ -1,0 +1,62 @@
+<html><head>
+<script language="JavaScript">
+function addNum()
+{
+	num1=parseInt(document.frm.txt1.value);
+    if(!isFinite(num1))
+	{
+		alert("Please eneter a number!");
+		return false;
+	}
+	num2=parseInt(document.frm.txt2.value);
+	num3=num1+num2;
+	document.frm.txt3.value=num3;
+}
+function substractNum()
+{
+	num1=parseInt(document.frm.txt1.value);
+    if(!isFinite(num1))
+	{
+		alert("Please eneter a number!");
+		return false;
+	}
+	num2=parseInt(document.frm.txt2.value);
+	num3=num1-num2;
+	document.frm.txt3.value=num3;
+}
+function multiplyNum()
+{
+	num1=parseInt(document.frm.txt1.value);
+    if(!isFinite(num1))
+	{
+		alert("Please eneter a number!");
+		return false;
+	}
+	num2=parseInt(document.frm.txt2.value);
+	num3=num1*num2;
+	document.frm.txt3.value=num3;
+}
+function divideNum()
+{
+	num1=parseInt(document.frm.txt1.value);
+    if(!isFinite(num1))
+	{
+		alert("Please eneter a number!");
+		return false;
+	}
+	num2=parseInt(document.frm.txt2.value);
+	num3=num1/num2;
+	document.frm.txt3.value=num3;
+}
+
+</script></head><body>
+<form name="frm">
+	Num1 <input type="text" name="txt1"><br>
+	Num2 <input type="text" name="txt2"><br>
+	Result <input type="text" name="txt3" disabled><br>
+<input type="button" value="Add" name="but1" onClick="addNum()">
+<input type="button" value="Substract" name="but2" onClick="substractNum()">
+<input type="button" value="Multiply" name="but3" onClick="multiplyNum()">
+<input type="button" value="Divide" name="but4" onClick="divideNum()">
+</form>
+</body></html>

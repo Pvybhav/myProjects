@@ -1,0 +1,409 @@
+<html>
+<head>
+<style type="text/css">
+.section-left {
+	width: 50%;
+	background-color: blue;
+}
+
+#left {
+	width: 50%;
+	float: left;
+	/* 	background-color: orange; */
+}
+
+#section-right {
+	width: 50%;
+	float: right;
+}
+
+#displaysdate {
+	margin-left: 76%;
+	color: black;
+	margin-top: 20px;
+}
+
+header {
+	margin-left: 30%;
+	color: #809fff;
+}
+
+#strong {
+	color: #6666ff;
+}
+
+#tablevalue {
+	color: #ff6600;
+}
+
+nav {
+	width: 100%;
+	background-color: #a64dff;
+}
+
+a {
+	text-decoration: none;
+}
+
+a:HOVER {
+	color: white;
+}
+
+a:ACTIVE {
+	color: red;
+}
+
+#home, #career, #about {
+	margin-right: 20px;
+}
+
+form {
+	/* 	background-color: lightgreen; */
+	
+}
+
+iframe {
+	width: 195%;
+	height: 85%;
+}
+
+#firstbutton {
+	margin-left: 1130px;
+	background-color: #99ffcc;
+}
+
+#secondbutton, #thirdbutton {
+	margin-left: 10px;
+	background-color: #99ffcc;
+}
+
+#firstbutton:HOVER {
+	background-color: yellow;
+}
+
+#firstbutton:ACTIVE {
+	color: black;
+}
+
+#secondbutton:HOVER {
+	background-color: yellow;
+}
+
+#thirdbutton:HOVER {
+	background-color: yellow;
+}
+
+video {
+	margin-left: 160px;
+	margin-top: -20px;
+	height: 240px;
+	width: 320px;
+}
+
+#imageheading {
+	margin-left: 245px;
+	color: #809fff;
+}
+
+#playbutton {
+	margin-left: 300px;
+	margin-top: 0px;
+}
+
+#tableheading {
+	margin-top: 30px;
+}
+</style>
+
+
+</head>
+<title>HTML5 page</title>
+
+<body>
+
+
+
+	<!-- 
+	*
+	*
+	*HEADER
+	*
+	* -->
+
+
+
+	<header>
+		<h1>Amazing Online Video Library</h1>
+		<strong id="displaysdate">Date Here</strong>
+	</header>
+
+
+
+	<!--
+	*
+	*
+	*NAVIGATION BAR
+	*
+	* -->
+
+
+
+	<nav>
+		<button type="button" onclick="aboutus()" id="firstbutton">AboutUS</button>
+		<button type="button" onclick="career()" id="secondbutton">Career</button>
+		<button type="button" onclick="home()" id="thirdbutton">Home</button>
+	</nav>
+
+
+
+	<!--
+	*
+	*
+	*LEFT SECTION
+	*
+	* -->
+
+
+
+	<section class="section-left">
+		<section id="left">
+			<div>
+				<p id="displayAll"></p>
+				<iframe src="HOME.html" id="iframe"> </iframe>
+			</div>
+		</section>
+	</section>
+
+
+
+	<!-- 
+	*
+	*
+	*RIGHT SECTION
+	*
+	* -->
+
+
+
+	<section id="section-right">
+		<!-- 		<p id="demo"></p> -->
+
+
+
+		<!-- 
+	*
+	*
+	*RIGHT SECTION TOP(FOR VIDEO)
+	*
+	* -->
+
+
+
+		<div>
+			<h3 id="imageheading">Video Of The Week</h3>
+			<video id="tomANDjerry">
+				<source src="videoOfTheWeek.mp4" type="video/mp4">
+				<source src="videoOfTheWeek.ogg" type="video/ogg">
+			</video>
+			<p id="playbutton">
+				<button id="play">Play</button>
+			</p>
+		</div>
+
+
+
+
+		<!-- 
+	*
+	*
+	*RIGHT SECTION BOTTOM(FOR FORM)
+	*
+	* -->
+
+
+
+		<div>
+			<form onsubmit="return false">
+				<h2>Video Choice For The Next Week</h2>
+				<br> FirstName:<input type="text" id="fname"
+					placeholder="enter your firstname here" name="first name"
+					pattern="[a-zA-Z]+" title="enter correct name" autofocus required>
+				<br> <br> LastName:<input type="text"
+					placeholder="enter your lastname here" pattern="[a-zA-Z]+" required
+					id="lname"><br> <br> EmailID:<input type="email"
+					placeholder="enter your emailID here" required id="email"><br>
+				<br> City:<select name="selectyourcity" id="selectyourcity"
+					onchange="showfield(this.options[this.selectedIndex].value)">
+					<option selected="selected">Please select ...</option>
+					<option value="Delhi">Delhi</option>
+					<option value="Mumbai">Mumbai</option>
+					<option value="Chennai">Chennai</option>
+					<option value="Bangalore">Bangalore</option>
+					<option value="Hyderabad">Hyderabad</option>
+					<option value="Other" id="lastone">other</option>
+				</select>
+				<div id="div1"></div>
+				<br> <br> age:<input type="number" required min="18"
+					max="120" id="age"> <br> <br>Video choice :<input
+					type="text" placeholder="enter video choice here" id="choice"
+					required><br>
+				<hr>
+				<input type="submit" value="PREVIEW ENTERED DETAILS"
+					onclick="displayOutput()" />
+			</form>
+		</div>
+		<div>
+			<p id="result"></p>
+		</div>
+	</section>
+
+
+
+	<!-- 
+	*
+	*
+	*JAVASCRIPT
+	*
+	* -->
+
+
+
+
+	<script type="text/javascript">
+		/*
+		 *
+		 *To display Date
+		 *
+		 *
+		 */
+		(function showdate() {
+
+			var d = new Date();
+			var month;
+			switch (d.getMonth()) {
+			case 0:
+				month = "January";
+				break;
+			case 1:
+				month = "February";
+				break;
+			case 2:
+				month = "March";
+				break;
+			case 3:
+				month = "April";
+				break;
+			case 4:
+				month = "May";
+				break;
+			case 5:
+				month = "June";
+				break;
+			case 6:
+				month = "July";
+			case 7:
+				month = "August";
+				break;
+			case 8:
+				month = "September";
+				break;
+			case 9:
+				month = "October";
+				break;
+			case 10:
+				month = "November";
+				break;
+			case 11:
+				month = "December";
+				break;
+			}
+			date = d.getDate();
+			year = d.getFullYear();
+
+			document.getElementById("displaysdate").innerHTML = "Date::"
+					+ d.getDate() + "-" + month + "-" + d.getFullYear();
+
+		})();
+		/*
+		 *
+		 *TO CHANGE THE iframe CONTENT ON CLICKING THE BUTTONS
+		 *
+		 */
+		function aboutus() {
+			document.getElementById("iframe").setAttribute("src",
+					"ABOUTUS.html");
+		}
+		function career() {
+			document.getElementById("iframe")
+					.setAttribute("src", "CAREER.html");
+		}
+		function home() {
+			document.getElementById("iframe").setAttribute("src", "HOME.html");
+		}
+
+		/*
+		 *
+		 *VIDEO CONTROL
+		 *
+		 */
+		var playvideo = document.getElementById('tomANDjerry'), playbutton = document
+				.getElementById('play');
+
+		// only in to demonstrate video
+		playbutton.addEventListener("click", function() {
+
+			playvideo.play();
+
+		}, false);
+		/*
+		 *
+		 *FUNCTION TO DISPLAY THE DETAILS ENTERED BY THE USER
+		 *
+		 */
+
+		function showfield(name) {
+
+			if (name == 'Other') {
+				document.getElementById('div1').innerHTML = 'Other: <input type="text" name="other" id="name"/>';
+			}
+			getcity(name);
+		}
+		function getcity(name) {
+
+			if (name == 'Delhi' || name == 'Mumbai' || name == 'Chennai'
+					|| name == 'Bangalore' || name == 'Hyderabad') {
+				document.getElementById("div1").innerHTML = '';
+			} else {
+				var name = document.getElementById("name").value;
+				// 				console.log(name);
+				// 				document.getElementById('div2').innerHTML = name;
+			}
+		}
+		function displayOutput() {
+			var firstname = document.getElementById("fname").value;
+			var lastname = document.getElementById("lname").value;
+			var email = document.getElementById("email").value;
+			if (document.getElementById("selectyourcity").value == "Other") {
+				var city = document.getElementById("name").value;
+			} else {
+				var city = document.getElementById("selectyourcity").value;
+			}
+			var age = document.getElementById("age").value;
+			var choice = document.getElementById("choice").value;
+			document.getElementById("result").innerHTML = "<h1 id='tableheading'>Please Find The Details Entered By You:"
+					+ "<table border='1'><tr><td id='strong'><strong>FirstName</td><td id='tablevalue'>"
+					+ firstname
+					+ "</td></tr> <tr><td id='strong'><strong>LastName</strong></td><td id='tablevalue'>"
+					+ lastname
+					+ "</td></tr><tr><td id='strong'><strong>Email</strong></td><td id='tablevalue'>"
+					+ email
+					+ "</td></tr><tr><td id='strong'><strong>City</strong></td><td id='tablevalue'>"
+					+ city
+					+ "</td></tr><tr><td id='strong'><strong>Age</strong></td><td id='tablevalue'>"
+					+ age
+					+ "</td></tr><tr><td id='strong'><strong>Video Choice</strong></td><td id='tablevalue'>"
+					+ choice + "</td></tr></table>";
+		}
+	</script>
+</body>
+</html>

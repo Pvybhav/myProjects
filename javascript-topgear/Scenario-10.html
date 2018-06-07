@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Scenario-10</title>
+</head>
+<body>
+	<input id="favouritecolor" type="text"
+		placeholder="enter your favourite color to change background color"
+		autofocus>
+	<input type="submit" onclick="changeFavouriteColorAsBackground()">
+	<script>
+		function changeFavouriteColorAsBackground() {
+			var fcolor = document.getElementById("favouritecolor").value;
+			document.body.style.background = fcolor;
+		}
+	</script>
+</body>
+</html>

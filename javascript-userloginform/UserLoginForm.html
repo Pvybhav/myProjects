@@ -1,0 +1,162 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Bootstrap Example</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+</head>
+<style>
+body{
+	margin: 70px;
+    border-style: solid;
+    border-width: 1px;
+    margin-right: 300px;
+	margin-left: 200px;
+}
+.container{
+	background-color: #ced4dd;
+    margin: 28px;
+    /* margin-left: 87px; */
+    /* padding: 16px; */
+    border-style: solid;
+    border-width: 1px;
+    border-color: #808080;
+    padding-left: 1px;
+    /* padding-right: 70px; */
+    width: 94%;
+}
+.container2{
+	height: 300px;
+}
+
+h1{
+	font-family:sans-serif
+}
+strong{
+	font-family:sans-serif;
+	font-size:14px;
+}
+#leftside{
+	padding-left: 80px;
+    padding-top: 20px;
+}
+
+form{
+    margin-left: 30px;
+}
+#login{
+	font-family: 'Open Sans', sans-serif;
+    font-size: 30px;
+    line-height: 28px;
+    margin: 0;
+	margin-top:25px;
+    display: inline-block;
+	font-weight: 800;
+
+}
+#emailPassword{
+	background-color:#3b3d3f;
+	color:white;
+	margin-top: -3px;
+	border-radius: 6px;
+}
+#rightside{
+	margin-top: 100px;
+    padding-left: 80px;
+}
+#facebook-icon {
+    width: 20px;
+    height: 20px;
+    margin-right: 155px;
+    margin-left: -5px;
+}
+#loginwithfacebook {
+    margin-right: 30px;
+    margin-left: -80px;
+}
+
+#loginbutton{
+	margin-top:30px;
+	border-radius: 4px;
+}
+#idforborder {
+    border-right: 2px solid black;
+    margin-right: -40px;
+}
+#or {
+    background-color: white !important;
+    width: 40px;
+    height: 30px;
+    margin-left: 307px;
+    /* margin-top: -39px; */
+    margin-bottom: -40px;
+    padding-left: 8px;
+    padding-top: 5px;
+    padding-left: 8px;
+    padding-right: 8px;
+}
+.btn-primary {
+    color: #fff;
+    background-color: #337ab7;
+    border-color: #2e6da4;
+    width: 295px;
+    margin-left: -1px;
+}
+#registerNewAccount{
+	text-decoration:underline;
+}
+</style>
+<body>  
+	<div class="container">
+	<div class="container2">
+		<div class="row">
+			<div class="col-sm-6" id="leftside">
+				<form>
+					<h1 id="login">Login</h1>&nbsp;or<a href="#" id="registerNewAccount">&nbsp;Register a new Account</a><br><br>
+					<div id="idforborder">
+						<strong>Forgot password?</strong><br><br>
+						Email ID<sup>&nbsp;*</sup><br>
+						<span id="or">OR</span>
+						<input type="text" onkeydown = "validateEmail(this)" placeholder="****@****.com" />
+						<p id="error"></p>
+						<p id="success"></p>
+						<!--<input type="submit" value="submit" onclick="validateForm()"><br/>-->
+						<input type="button" value="Email Password" id="emailPassword">
+						<i class="fa fa-facebook" aria-hidden="true"></i>
+					</div>	  
+				</form>
+			</div>
+			<div class="col-sm-6" id="rightside">
+				<strong>Have a facebook account?</strong><br/>
+				<a href = "https://www.facebook.com/"><button type="button" class="btn btn-primary" id="loginbutton"><img src="facebook-icon.png" alt="facebook" id="facebook-icon"><span id="loginwithfacebook">Login with facebook</span></button></a>
+			</div>
+		</div>
+	</div>
+	</div>
+<script>
+	function validateEmail(emailField){
+	    if((emailField.value.length)<2){
+			document.getElementById("error").innerHTML="";
+		}
+		else{
+		var reg = /^([A-Za-z0-9_\-\.])+\@([A-Za-z0-9_\-\.])+\.([A-Za-z]{2,4})$/;
+        if (reg.test(emailField.value) == false) 
+        {
+			document.getElementById("error").innerHTML="Please enter valid email ID(example:****@****.com)";
+			document.getElementById("error").style.color = "red";
+            return false
+        }
+		else{
+			document.getElementById("error").innerHTML="Valid Email";
+			document.getElementById("error").style.color = "green";
+			return true;
+		}
+		}
+	}  
+</script>
+</body>
+</html>

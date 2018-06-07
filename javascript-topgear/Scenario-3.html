@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Scenario-3</title>
+<style>
+#id {
+	text-align: center;
+}
+</style>
+</head>
+<body>
+	<div id="id">
+		<input type="text" id="firstnumber" placeholder="enter number here">
+		<br> <input type="text" id="secondnumber"
+			placeholder="enter number here"><br> <input
+			type="submit" value="Add" onclick="validate()">
+		<p id="result">
+	</div>
+	<script>
+		function validate() {
+			var first = document.getElementById("firstnumber").value;
+			var second = document.getElementById("secondnumber").value;
+			if (isNaN(first) || isNaN(second)) {
+				alert("Sorry.... Only Nos will be added");
+				document.getElementsByTagName("input")[0].value = null;
+				document.getElementsByTagName("input")[1].value = null;
+			} else {
+				document.getElementById("result").innerHTML = "the sum of values entered by you is "
+						+ (parseInt(first) + parseInt(second));
+			}
+		}
+	</script>
+</body>
+</html>

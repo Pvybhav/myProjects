@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Scenario-1</title>
+<style>
+#id {
+	text-align: center;
+}
+</style>
+</head>
+<body>
+	<div id="id">
+		<p id="display"></p>
+	</div>
+	<script>
+		var result = "";
+		var arr = [ "vybhav1", "vybhav2", "vybhav3", "vybhav4", "vybhav5",
+				"vybhav6", "vybhav7", "vybhav8", "vybhav9", "vybhav10" ];
+		for (var i = 0; i < arr.length; i++) {
+			result = result + arr[i] + "<br>";
+			i++;
+		}
+		document.getElementById("display").innerHTML = "<h1>the alternate values in the given array is</h1>"
+				+ "<h4>" + result + "</h4>";
+	</script>
+</body>
+</html>

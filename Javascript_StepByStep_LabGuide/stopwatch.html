@@ -1,0 +1,69 @@
+<html>
+
+<head>
+</head>
+
+<body>
+    <h1> Stop Watch </h1>
+    <form name ="stopwatchform">
+        <input type ="text" name = "stopwatch" id="time" style = "text-align: center;" disabled><br/>
+        <input type="button" value="Start" id = "start" style = "margin-left: 2em;margin-top: 1em; "onclick="StartTimer()">
+        <input type="button" value="Stop" id = "stop" onclick="StopTimer()">
+    </form>
+    <script>
+        var seconds = 56;
+        var minutes = 59;
+        var hours = 0;
+        
+
+        function StartTimer(){
+            var displayseconds = 0, displayminutes = 0, displayhours = 0;
+            document.getElementById('start').disabled = true;
+            document.getElementById('stop').disabled = false;
+            id = setTimeout(StartTimer,1000);
+            seconds += 1;
+            if(seconds<10){
+                displayseconds = "0" + seconds;
+            }
+            else{
+                displayseconds = seconds;
+            }
+            if(minutes<10){
+                displayminutes = "0" + minutes;
+            }
+            else{
+                displayminutes = minutes;
+            }
+            if(hours<10){
+                displayhours = "0" + hours;
+            }
+            else{
+                displayhours = displayhours;
+            }
+            if(seconds == 60){
+                minutes += 1;
+                seconds = 0;
+            }
+            if(minutes == 60){
+                hours += 1;
+                minutes = 0;
+            }
+            if(hours == 59 && minutes == 60 && seconds == 60){
+                alert("Reached max limit....Resetting to initial values");
+                hours = 0;
+                minutes =0;
+                seconds = 0;
+            }
+            document.getElementById('time').value = displayhours+":" + displayminutes +":" + displayseconds;
+
+        }
+        function StopTimer(){
+            document.getElementById('stop').disabled = true;
+            document.getElementById('start').disabled = false;
+            clearTimeout(id)
+        }
+        
+    </script>    
+</body>
+
+</html>
